@@ -8,19 +8,20 @@ const Bookshelf = () => {
         author: ""
     })
     // console.log(newBooks)
+    
 
     //This function updates the form’s state as the user types into the input fields
     const handleInputChange = (e) => {
         console.log(e.target.name)
-
+        
         setNewBooks({...newBooks, [e.target.name] : e.target.value})
     }
-
+    
     // This function manages the submission of the form, adding a new book to the list and resetting the input fields.
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Book was submitted. No longer navigate away from page.")
-
+        // console.log("Book was submitted. No longer navigate away from page.")
+        
         // 
         setBooks({...books, newBooks })
         
@@ -30,6 +31,7 @@ const Bookshelf = () => {
     console.log("Books", books)
     // console.log("setBooks", setBooks)
     // console.log("Book added", newBooks)
+
     
 
     return(
@@ -59,6 +61,9 @@ const Bookshelf = () => {
             </div>
             <div className="bookCardsDiv">
                 {/* Book cards will display here */}
+                {books.map((book, idx) => {
+                    <h2 key={idx}>{book.title}</h2>
+                })}
             </div>
         </div>
     )
