@@ -9,7 +9,11 @@ const Bookshelf = () => {
     })
     // console.log(newBooks)
 
+    const handleInputChange = (e) => {
+        console.log(e.target.name)
 
+        setNewBooks({...newBooks, [e.target.name] : e.target.value})
+    }
 
     return(
         <div className="bookshelfDiv">
