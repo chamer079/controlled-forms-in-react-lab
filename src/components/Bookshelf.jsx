@@ -22,8 +22,8 @@ const Bookshelf = () => {
         e.preventDefault()
         // console.log("Book was submitted. No longer navigate away from page.")
         
-        // 
-        setBooks({...books, newBooks })
+        // spread books array and add newBooks object into books
+        setBooks([...books, newBooks] )
         
         // Reset newBooks state to clear our form inputs
         setNewBooks({title: "", author: ""})
@@ -62,7 +62,10 @@ const Bookshelf = () => {
             <div className="bookCardsDiv">
                 {/* Book cards will display here */}
                 {books.map((book, idx) => {
-                    <h2 key={idx}>{book.title}</h2>
+              <ul>
+                   <li key={idx}>{book.title}</li>
+                   <li>{book.author}</li>
+               </ul>
                 })}
             </div>
         </div>
