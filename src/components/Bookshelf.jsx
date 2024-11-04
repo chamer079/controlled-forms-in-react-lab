@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../../src/index.css"
 
 const Bookshelf = () => {
     const [books, setBooks] = useState([])
@@ -61,12 +62,13 @@ const Bookshelf = () => {
             </div>
             <div className="bookCardsDiv">
                 {/* Book cards will display here */}
-                {books.map((book, idx) => {
-              <ul>
-                   <li key={idx}>{book.title}</li>
-                   <li>{book.author}</li>
-               </ul>
-                })}
+               {books.map((book, idx) => {
+                <ul key={idx}>
+                    <li>{book.title}</li>
+                    <li>{book.author}</li>
+                </ul>
+                console.log(book.title)
+               })}
             </div>
         </div>
     )
