@@ -33,7 +33,7 @@ const Bookshelf = () => {
     // console.log("setBooks", setBooks)
     // console.log("Book added", newBooks)
 
-    
+ 
 
     return(
         <div className="bookshelfDiv">
@@ -61,14 +61,12 @@ const Bookshelf = () => {
                 </form>
             </div>
             <div className="bookCardsDiv">
-                {/* Book cards will display here */}
-               {books.map((book, idx) => {
-                <ul key={idx}>
-                    <li>{book.title}</li>
-                    <li>{book.author}</li>
-                </ul>
-                console.log(book.title)
-               })}
+            {books.map((book, idx) => (
+                        <div key={idx}>
+                            <h2>{book.title}</h2>
+                            <h3>{book.author}</h3>
+                        </div>
+                    ))}
             </div>
         </div>
     )
